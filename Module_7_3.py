@@ -16,7 +16,7 @@ class WordsFinder:
                 all_words[file_name] = words
         return all_words
 
-    def find_(self, word):
+    def find(self, word):
         results = {}
         all_words = self.get_all_words()
         word = word.lower()  # Приводим слово к нижнему регистру для поиска
@@ -25,7 +25,7 @@ class WordsFinder:
                 results[file_name] = words.index(word)  # Получаем индекс слова в списке
         return results
 
-    def count_(self, word):
+    def count(self, word):
         results = {}
         all_words = self.get_all_words()
         for file_name, words in all_words.items():
@@ -34,6 +34,6 @@ class WordsFinder:
 
 finder2 = WordsFinder('test_file.txt')
 print(finder2.get_all_words()) # Все слова
-print(finder2.find_('TEXT')) # 3 слово по счёту
-print(finder2.count_('teXT')) # 4 слова teXT в тексте всего
+print(finder2.find('TEXT')) # 3 слово по счёту
+print(finder2.count('teXT')) # 4 слова teXT в тексте всего
 
